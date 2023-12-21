@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">AnimalsProject</string>
+
+    <string name="food_label">Yedigi Besin: %s</string>
+    <string name="naturel_environment">Yasadigi Habitat: %s</string>
+    <string name="animal_sound">Cikardigi Ses: %s</string>
+    <string name="skin_color">Deri Rengi: %s</string>
+    <string name="feather_color">Tuy Rengi: %s</string>
+    <string name="flake_color">Pul Rengi: %s</string>
+
+    <string name="breathing_type">Solunum tipi %s</string>
+
 </resources>

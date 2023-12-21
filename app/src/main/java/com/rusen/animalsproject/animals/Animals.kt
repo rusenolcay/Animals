@@ -1,19 +1,20 @@
 package com.rusen.animalsproject.animals
 
+import android.os.Parcelable
 import androidx.annotation.DrawableRes
 
 abstract class Animals(
-    val adi: String,
-    @DrawableRes val resmi: Int,
-    val besin: Besin,
-    val habitat: Habitat
-) {
-    abstract fun sesCikar(): String?
+    open val name: String,
+    @DrawableRes open val picture: Int,
+    open val food: Food,
+    open val habitat: Habitat
+) : Parcelable {
+    abstract fun makeVoice(): String?
 
-    abstract fun solunumTipi(): String
+    abstract fun breathingtype(): String
 
     override fun toString(): String {
-        return "Animals(adi='$adi', resmi=$resmi, besin=$besin, habitat=$habitat)"
+        return "Animals(adi='$name', resmi=$picture, besin=$food, habitat=$habitat)"
     }
 
     override fun equals(other: Any?): Boolean {
@@ -22,18 +23,18 @@ abstract class Animals(
 
         other as Animals
 
-        if (adi != other.adi) return false
-        if (resmi != other.resmi) return false
-        if (besin != other.besin) return false
+        if (name != other.name) return false
+        if (picture != other.picture) return false
+        if (food != other.food) return false
         if (habitat != other.habitat) return false
 
         return true
     }
 
     override fun hashCode(): Int {
-        var result = adi.hashCode()
-        result = 31 * result + resmi
-        result = 31 * result + besin.hashCode()
+        var result = name.hashCode()
+        result = 31 * result + picture
+        result = 31 * result + food.hashCode()
         result = 31 * result + habitat.hashCode()
         return result
     }

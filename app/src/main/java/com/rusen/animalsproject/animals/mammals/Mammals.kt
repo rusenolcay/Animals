@@ -1,14 +1,15 @@
 package com.rusen.animalsproject.animals.mammals
 
+import android.os.Parcelable
 import androidx.annotation.DrawableRes
 import com.rusen.animalsproject.animals.Animals
-import com.rusen.animalsproject.animals.Besin
+import com.rusen.animalsproject.animals.Food
 import com.rusen.animalsproject.animals.Habitat
 
 abstract class Mammals(
-    adi: String,
-    @DrawableRes resmi: Int,
-    besin: Besin,
+    name: String,
+    @DrawableRes picture: Int,
+    food: Food,
     habitat: Habitat,
-    deriRengi: String
-) : Animals(adi, resmi, besin, habitat)
+    open val skinColor: String
+) : Animals(name, picture, food, habitat), Parcelable

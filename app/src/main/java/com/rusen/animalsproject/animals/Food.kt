@@ -1,5 +1,5 @@
 package com.rusen.animalsproject.animals
 
-enum class Besin {
+enum class Food {
     ET, OT, ET_VE_OT
 }
